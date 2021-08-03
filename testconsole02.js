@@ -20,7 +20,7 @@ var programStep = 0;
 
 function Player(inputPlayerName) {
 	this.playerName = inputPlayerName.toString();
-	this.hp = 30;
+	this.hp = 40;
 	this.playerAttackStr = 8;
 	this.playerDefenseStr = 6;
 	this.playerDodgeStr = 3;
