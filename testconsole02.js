@@ -14,8 +14,8 @@ var supButtonIndex = 99;
 /*step ids for this program:
 ___0 - enter name
 ___1 - pick one of the four shirt colors
-___2 - waking up
-___3 - look at the cube*/
+___2 - name the shirt
+___3 - fight the cube*/
 var programStep = 0;
 
 function Player(inputPlayerName) {
@@ -59,6 +59,11 @@ function CubeEnemy(inputCubeName) {
 
 CubeEnemy.prototype.kippy = function(kippyParameter) {
 	return 0;
+};
+
+var initValues = {
+	next_directive:nextDirective,
+	test_value:450
 };
 
 //function that's called by the page on submit or main button press
@@ -123,13 +128,6 @@ function program3() {
 		updateConsole();
 		return;
 	}
-	if(player1.hp <= 0) {
-		newText = "Unfortunately you're dead.";
-		nextDirective = "Can't do anything:";
-		supButtonIndex = 99;
-		updateConsole();
-		return;
-	}
 	if(firstEnemy.hp <= 0) {
 		newText = "Unfortunately this is as far as this goes.";
 		nextDirective = "Can't do anything:";
@@ -162,9 +160,8 @@ function program3() {
 		
 	}
 	if(player1.hp <= 0) {
-		newText = "The cube killed you! 0 HP left.";
-		nextDirective = "Can't do anything:";
-		supButtonIndex = 99;
+		newText = "The cube killed you! 0 HP left. Game over.";
+		resetProgram();
 		updateConsole();
 		return;
 	}
@@ -190,10 +187,20 @@ function supButton(buttonID) {
 	thisProgram();
 }
 
+function resetProgram() {
+	nextDirective = initValues.next_directive;
+	player1 = undefined;
+	firstEnemy = undefined;
+	supButtonIndex = 99;
+	programStep = 0;
+}
+
 function ranger(num,maxOneWayDiff) {
-	var num2 = Math.round(num+(Math.round(Math.random()*(maxOneWayDiff*2))-maxOneWayDiff));
-	if(num2 < 0) {
-		num2 = 0;
+	if(Math.random() >= 0.5) {
+		var addit = Math.round(Math.random()*maxOneWayDiff);
+	} else {
+		var addit = Math.round(Math.random()*maxOneWayDiff) * -1;
 	}
-	return num2;
+	var num2 = num + addit;
+	return num2 > 0 ? Math.round(num2) : 0;
 }

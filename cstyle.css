@@ -16,7 +16,7 @@ form {
 }
 
 .textIn {
-	width: 55%;
+	width: 60%;
 }
 
 .mainButtonClass {
@@ -26,5 +26,5 @@ form {
 .supButtonArea {
 	display: flex;
 	justify-content: space-between;
-	width: 55%;
+	width: 60%;
 }
