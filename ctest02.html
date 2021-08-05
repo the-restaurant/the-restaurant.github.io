@@ -11,13 +11,15 @@
   <b>Web Console</b> by Restaurant<br><br>Test Project 02 - Text Adventure-ish
   </p>
   <p id="mainArea" name="mainArea">
-	<label for="consoleOut">Console output:</label>
-	<textarea id="consoleOut" name="consoleOut" class="textOut" rows="12" readonly></textarea>
-	<label for="consoleIn">Console input:</label>
-	<form id="consoleForm">
-	<input id="consoleIn" name="consoleIn" class="textIn" type="text" rows="1" autofocus>
-	</form>
-	<button id="mainButton" name="mainButton" class="mainButtonClass" onclick="toConsole();">send input</button>
+  <label for="consoleOut">Console output:</label>
+  <textarea id="consoleOut" name="consoleOut" class="textOut" rows="12" readonly></textarea>
+  <label for="consoleIn">Console input:</label>
+  <div id="inputAndSubmitSection" name="inputAndSubmitSection" class="inputAndSubmit">
+  <form id="consoleForm">
+  <input id="consoleIn" name="consoleIn" class="textIn" type="text" rows="1" autofocus>
+  </form>
+  <button id="mainButton" name="mainButton" class="mainButtonClass" onclick="toConsole();">send input</button>
+  </div>
   </p>
   <div id="buttons" name="buttons" class="supButtonArea">
   <button id="buttonA" class ="supButtons" onclick="supButton(1);">[   A   ]</button> <button id="buttonB" class ="supButtons" onclick="supButton(2);">[   B   ]</button> <button id="buttonC" class ="supButtons" onclick="supButton(3);">[   C   ]</button> <button id="buttonD" class ="supButtons" onclick="supButton(4);">[   D   ]</button>

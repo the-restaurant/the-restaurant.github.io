@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body,button,table,input,textarea,form,label {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: bisque;
+  padding: 0px;
+}
+
+.titleSpace {
+  padding: 1em;
+}
+
+.mainAreaBox {
+  background-color: burlywood;
+  box-shadow: 1em 1em 0.5em rgba(0,0,0,0.5);
+  border-radius: 0.5em;
+  padding: 1em;
+  width: 70%;
+}

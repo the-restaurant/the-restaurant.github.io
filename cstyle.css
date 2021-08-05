@@ -5,26 +5,38 @@ body,button,table,input,textarea,form,label {
 }
 
 form {
-	display: inline;
+  display: inline;
+}
+
+label {
+  font-style: italic;
 }
 
 .textOut {
-	display: block;
-	overflow-y: scroll;
-	resize: none;
-	width: 90%;
+  display: block;
+  margin-bottom: 0.5em;
+  overflow-y: scroll;
+  resize: none;
+  width: 90%;
+}
+
+.inputAndSubmit {
+  position: relative;
+  top: -0.5em;
 }
 
 .textIn {
-	width: 60%;
+  width: 60%;
 }
 
 .mainButtonClass {
-	display: inline;
+  display: inline;
 }
 
 .supButtonArea {
-	display: flex;
-	justify-content: space-between;
-	width: 60%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: -0.5em;
+  width: 60%;
 }
