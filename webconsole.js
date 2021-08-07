@@ -5,7 +5,7 @@ let textHist = "";
 let newText = "";
 let nextDirective = "";
 let commandSeparator = " ";
-let outputSeparator = "\n";
+let outputSeparator = "\n\n";
 let directiveSeparator = "\n";
 const buttonArray = ["A", "B", "C", "D"];
 
@@ -22,6 +22,11 @@ function updateConsole() {
   textHist = textHist.length > 0 ? textHist + commandSeparator + cin + outputSeparator + newText + directiveSeparator + nextDirective : newText + directiveSeparator + nextDirective;
   document.getElementById("consoleOut").innerHTML = textHist;
   document.getElementById("consoleOut").scrollTop = document.getElementById("consoleOut").scrollHeight;
+}
+
+function clearConsole() {
+  textHist = nextDirective;
+  document.getElementById("consoleOut").innerHTML = textHist;
 }
 
 function inConsoleBoxSubmit(e) {
