@@ -10,12 +10,23 @@ body {
 
 .titleSpace {
   padding: 1em;
+  display: block;
+  position: relative;
+  max-width: 600px;
+  animation-name: titleAnim;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
 
 .mainAreaBox {
+  display: block;
+  position: relative;
   background-color: #FF9B34;
   font-size: 120%;
   border-radius: 0.5em;
+  top: -2em;
   box-shadow: 1em 1em 0.5em rgba(0,0,0,0.5);
   padding: 1em;
   width: 70%;
@@ -31,8 +42,18 @@ body {
   border-radius: 50%;
   text-align: center;
   line-height: 20em;
+  transition: transform 0.15s ease-out;
 }
 
 .myShape1Class:hover {
   transform: scale(1.1);
+}
+
+@keyframes titleAnim {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 10em;
+  }
 }
