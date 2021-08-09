@@ -1,9 +1,9 @@
-//test program 01 - individual js file. this is all program-specific
+//test program 02 - individual js file. this is all program-specific
 //webconsole.js must be loaded before this!
 
 nextDirective = "Enter your character's name:";
 
-textHist = "Welcome to the game. This is a text game.\n" + nextDirective;
+textHist = "Welcome to the game. This is a text game.\n\n" + nextDirective;
 document.getElementById("consoleOut").innerHTML = textHist;
 document.getElementById("consoleIn").value = "";
 let supButtonIndex = 99;
@@ -67,7 +67,7 @@ const initValues = {
 function thisProgram() {
   document.getElementById("consoleIn").value = "";
   cin = cin.trim();
-  if (cin.length < 1 || cin == undefined || cin == "") {
+  if (!cin) {
     newText = "Bad input.";
     cin = " ";
     updateConsole();
@@ -84,6 +84,7 @@ function thisProgram() {
 }
 
 function program0() {
+  cin = cin.length > 32 ? cin.slice(0, 32) : cin;
   player1 = new Player(cin);
   newText = "You have chosen the name " + player1.playerName + ".";
   nextDirective = "Choose one of the four shirt colors: red, orange, blue, or purple.\nYou can also use one of the four buttons. (A=red, B=orange, C=blue, D=purple):";
@@ -110,8 +111,9 @@ function program1() {
 }
 
 function program2() {
+  cin = cin.length > 32 ? cin.slice(0, 32) : cin;
   player1.shirtName = cin;
-  newText = "Your " + player1.shirtColor + " shirt's name is " + player1.shirtName + ".\nOh no, a cube has taken " + player1.shirtName + " from you and attacked you, " + player1.playerName + "!";
+  newText = "Your " + player1.shirtColor + " shirt's name is " + player1.shirtName + ".\n\nOh no, a cube has taken " + player1.shirtName + " from you and attacked you, " + player1.playerName + "!";
   nextDirective = "Press A to attack or B to dodge/heal!:";
   firstEnemy = new CubeEnemy("Demon");
   programStep = 3;

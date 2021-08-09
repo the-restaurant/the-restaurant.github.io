@@ -8,8 +8,8 @@ function shuffle(inputArray) {
 //get a shuffled copy of an array
 function shuffledArray(inputArray) {
   let arrayCopy = inputArray.slice(0);
-  let newArray = new Array();
-  while(arrayCopy.length > 0) {
+  let newArray = [];
+  while (arrayCopy.length > 0) {
     newArray.push(arrayCopy.splice((Math.random() * arrayCopy.length) >> 0, 1)[0]);
   }
   return newArray;

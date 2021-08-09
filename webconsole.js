@@ -6,7 +6,7 @@ let newText = "";
 let nextDirective = "";
 let commandSeparator = " ";
 let outputSeparator = "\n\n";
-let directiveSeparator = "\n";
+let directiveSeparator = "\n\n";
 const buttonArray = ["A", "B", "C", "D"];
 
 function toConsole() {
@@ -16,12 +16,11 @@ function toConsole() {
 }
 
 function updateConsole() {
-  if (newText.length <= 0) {
-    return;
+  if (newText) {
+    textHist = textHist ? textHist + commandSeparator + cin + outputSeparator + newText + directiveSeparator + nextDirective : newText + directiveSeparator + nextDirective;
+    document.getElementById("consoleOut").innerHTML = textHist;
+    document.getElementById("consoleOut").scrollTop = document.getElementById("consoleOut").scrollHeight;
   }
-  textHist = textHist.length > 0 ? textHist + commandSeparator + cin + outputSeparator + newText + directiveSeparator + nextDirective : newText + directiveSeparator + nextDirective;
-  document.getElementById("consoleOut").innerHTML = textHist;
-  document.getElementById("consoleOut").scrollTop = document.getElementById("consoleOut").scrollHeight;
 }
 
 function clearConsole() {

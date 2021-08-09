@@ -18,7 +18,7 @@ let doNotIndex = -1;
 function thisProgram() {
   document.getElementById("consoleIn").value = "";
   cin = cin.trim();
-  if (cin.length < 1 || cin == undefined || cin == "") {
+  if (!cin) {
     newText = "Bad input.";
     nextDirective = "Input command:";
     cin = " ";
