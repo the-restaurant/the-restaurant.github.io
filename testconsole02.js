@@ -166,7 +166,7 @@ function program3() {
   }
   if (firstEnemy.hp <= 0) {
     newText = "YOU WON! The cube is dead and " + player1.shirtName + " has been returned to you! You also earned " + firstEnemy.expGift + " experience points!";
-    nextDirective = "Can't do anything:";
+    nextDirective = "Unfortunately you've reached the end of this for now:";
     supButtonIndex = 99;
     updateConsole();
     return;
