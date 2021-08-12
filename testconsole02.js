@@ -41,12 +41,12 @@ let firstEnemy = undefined;
 function CubeEnemy(inputCubeName) {
   this.enemyName = inputCubeName.toString();
   this.enemyType = "Cube";
-  this.hp = 20 + (Math.random() * 11 >> 0);
-  this.enemyAttackStr = 8 + (Math.random() * 5 >> 0);
-  this.enemyDefenseStr = 8 + (Math.random() * 5 >> 0);
-  this.enemyDodgeStr = 2 + (Math.random() * 2 >> 0);
-  this.enemyAccuracy = 6 + (Math.random() * 5 >> 0);
-  this.expGift = 400 + ((Math.random() * 111) >> 0);
+  this.hp = 20 + (Math.random() * 11 << 0);
+  this.enemyAttackStr = 8 + (Math.random() * 5 << 0);
+  this.enemyDefenseStr = 8 + (Math.random() * 5 << 0);
+  this.enemyDodgeStr = 2 + (Math.random() * 2 << 0);
+  this.enemyAccuracy = 6 + (Math.random() * 5 << 0);
+  this.expGift = 400 + ((Math.random() * 111) << 0);
   this.enemyDodgeRoll = 0;
   this.enemyMissRoll = 0;
   this.enemyAttackRoll = 0;
@@ -66,7 +66,7 @@ const initValues = {
 //function that's called by the page on submit or main button press
 function thisProgram() {
   document.getElementById("consoleIn").value = "";
-  cin = cin.trim();
+  cin = sanitize(cin, maxInputLength);
   if (!cin) {
     newText = "Bad input.";
     cin = " ";
@@ -84,7 +84,6 @@ function thisProgram() {
 }
 
 function program0() {
-  cin = cin.length > 32 ? cin.slice(0, 32) : cin;
   player1 = new Player(cin);
   newText = "You have chosen the name " + player1.playerName + ".";
   nextDirective = "Choose one of the four shirt colors: red, orange, blue, or purple.\nYou can also use one of the four buttons. (A=red, B=orange, C=blue, D=purple):";
@@ -97,7 +96,7 @@ function program1() {
     cinlc = possShirtColors[supButtonIndex];
     supButtonIndex = 99;
   }
-  shirtColorValid = possShirtColors.indexOf(cinlc) >= 0;
+  shirtColorValid = possShirtColors.indexOf(cinlc) > -1;
   if (!shirtColorValid) {
     newText = "Not an available shirt color.";
     updateConsole();
@@ -111,7 +110,6 @@ function program1() {
 }
 
 function program2() {
-  cin = cin.length > 32 ? cin.slice(0, 32) : cin;
   player1.shirtName = cin;
   newText = "Your " + player1.shirtColor + " shirt's name is " + player1.shirtName + ".\n\nOh no, a cube has taken " + player1.shirtName + " from you and attacked you, " + player1.playerName + "!";
   nextDirective = "Press A to attack or B to dodge/heal!:";
@@ -134,9 +132,9 @@ function program3() {
     updateConsole();
     return;
   }
-  if (supButtonIndex == 0) {
+  if (supButtonIndex === 0) {
     //attack
-    player1.playerMissRoll = Math.random() * player1.playerAccuracy >> 0;
+    player1.playerMissRoll = Math.random() * player1.playerAccuracy << 0;
     if (player1.playerMissRoll >= firstEnemy.enemyDodgeStr) {
       //hit
       firstEnemy.hp -= ranger(player1.playerAttackStr / 2, 2);
@@ -148,7 +146,7 @@ function program3() {
     }
   } else {
     //dodge
-    player1.playerDodgeRoll = Math.random() * player1.playerDodgeStr >> 0;
+    player1.playerDodgeRoll = Math.random() * player1.playerDodgeStr << 0;
     if (player1.playerDodgeRoll > 0) {
       player1.hp++;
       newText = "You successfully dodged the cube's next attack and gained 1 HP!";
@@ -195,6 +193,6 @@ function resetProgram() {
 }
 
 function ranger(num, maxOneWayDiff) {
-  let addit = Math.random() >= 0.5 ? Math.round(Math.random() * maxOneWayDiff) : Math.round(Math.random() * maxOneWayDiff) * -1;
+  let addit = Math.random() < 0.5 ? Math.round(Math.random() * maxOneWayDiff) : Math.round(Math.random() * maxOneWayDiff) * -1;
   return (num + addit) > 0 ? Math.round(num + addit) : 0;
 }

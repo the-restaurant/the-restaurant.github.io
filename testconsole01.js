@@ -17,7 +17,7 @@ let doNotIndex = -1;
 //function that's called by the page on submit or main button press
 function thisProgram() {
   document.getElementById("consoleIn").value = "";
-  cin = cin.trim();
+  cin = sanitize(cin, maxInputLength);
   if (!cin) {
     newText = "Bad input.";
     nextDirective = "Input command:";
@@ -32,7 +32,7 @@ function thisProgram() {
   dontIndex = dontIndex < 0 ? 9999 : dontIndex;
   don_tIndex = don_tIndex < 0 ? 9999 : don_tIndex;
   doNotIndex = doNotIndex < 0 ? 9999 : doNotIndex;
-  if (meepIndex >= 0) {
+  if (meepIndex > -1) {
     //special "do not meep" case
     if (Math.min(dontIndex, don_tIndex, doNotIndex) < meepIndex) {
       if (meepCounter !== 1) {

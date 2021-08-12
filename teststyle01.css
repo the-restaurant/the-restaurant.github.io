@@ -11,8 +11,9 @@ body {
 .titleSpace {
   padding: 1em;
   display: block;
-  position: relative;
+  position: fixed;
   max-width: 600px;
+  top: 45px;
   animation-name: titleAnim;
   animation-duration: 1s;
   animation-direction: alternate;
@@ -54,6 +55,12 @@ body {
     left: 0;
   }
   100% {
-    left: 10em;
+    left: 100px;
   }
+}
+
+.buttonClass {
+  width: 10em;
+  height: 10em;
+  transition: translate 0.25s ease-in-out;
 }

@@ -7,6 +7,7 @@ let nextDirective = "";
 let commandSeparator = " ";
 let outputSeparator = "\n\n";
 let directiveSeparator = "\n\n";
+let maxInputLength = 32;
 const buttonArray = ["A", "B", "C", "D"];
 
 function toConsole() {
@@ -26,6 +27,14 @@ function updateConsole() {
 function clearConsole() {
   textHist = nextDirective;
   document.getElementById("consoleOut").innerHTML = textHist;
+}
+
+function sanitize(inputStr, maxLength) {
+  let cleanStr = inputStr.replace(/[^\w\s]+/g, "").replace(/^\s+|\n|\r|\t|\s+$/g, "").replace(/\s\s+/g, " ");
+  if (maxLength) {
+    return cleanStr.slice(0, maxLength);
+  }
+  return cleanStr;
 }
 
 function inConsoleBoxSubmit(e) {
