@@ -169,3 +169,41 @@ for (let i = 1; i; i--) {
   }
   console.log("BAD INPUT");
 }
+
+//switch case trick for conditions
+
+let userInput = "walk";
+let acceptedInputs = ["run", "sleep", "walk", "die"];
+
+switch (userInput) {
+  case (acceptedInputs.indexOf("walk") > -1 ? userInput : null):
+    console.log("you walked");
+    break;
+  case (acceptedInputs.indexOf("sleep") > -1 ? userInput : null):
+    console.log("you slept");
+    break;
+  default:
+    console.log("no user input was valid");
+}
+
+
+
+function cutThisAndAfter(originalString, targetString) {
+  let cutIndex = originalString.indexOf(targetString);
+  return originalString.slice(0, cutIndex);
+}
+
+function cutUntil(originalString, targetString) {
+  let startIndex = originalString.indexOf(targetString);
+  return originalString.slice(startIndex);
+}
+
+
+let anyVar = 1;
+let trip = 1;
+
+if(trip) {
+  if("cat" === "cat") {
+    trip = false;
+  }
+}

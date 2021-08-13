@@ -12,7 +12,6 @@ body {
   padding: 1em;
   display: block;
   position: fixed;
-  max-width: 600px;
   top: 45px;
   animation-name: titleAnim;
   animation-duration: 1s;
@@ -60,7 +59,9 @@ body {
 }
 
 .buttonClass {
+  display: block;
   width: 10em;
   height: 10em;
-  transition: translate 0.25s ease-in-out;
+  position: absolute;
+  transition: transform 0.25s ease-in-out;
 }

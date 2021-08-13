@@ -30,11 +30,8 @@ function clearConsole() {
 }
 
 function sanitize(inputStr, maxLength) {
-  let cleanStr = inputStr.replace(/[^\w\s]+/g, "").replace(/^\s+|\n|\r|\t|\s+$/g, "").replace(/\s\s+/g, " ");
-  if (maxLength) {
-    return cleanStr.slice(0, maxLength);
-  }
-  return cleanStr;
+  let cleanStr = inputStr.replace(/[^\w\s]+|_+/g, "").replace(/^\s+|\n|\r|\t|\s+$/g, "").replace(/\s\s+/g, " ");
+  return maxLength ? cleanStr.slice(0, maxLength).replace(/^\s+|\s+$/g, "") : cleanStr;
 }
 
 function inConsoleBoxSubmit(e) {

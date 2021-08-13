@@ -1,8 +1,8 @@
 function touchfunc(event) {
-  let touchObj = event.changedTouches[0];
   document.getElementById("titles").style.fontSize = "300%";
-  document.getElementsByClassName("buttonClass")[0].translate(touchObj.pageX, touchObj.pageY);
-  document.getElementsByClassName("buttonClass")[0].width = "20em";
+  document.getElementsByClassName("buttonClass")[0].style.width = "200px";
+  document.getElementsByClassName("buttonClass")[0].style.left = event.touches[0].pageX;
+  document.getElementsByClassName("buttonClass")[0].style.height = event.touches[0].pageY;
 }
 
 document.getElementById("pageBody").addEventListener("touchstart", touchfunc);
