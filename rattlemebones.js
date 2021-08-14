@@ -105,11 +105,16 @@ function objectAlreadyExists(testingObject, objectsArray) {
 function smartRound(inputNumber) {
   if (inputNumber > 0) {
     return inputNumber - (inputNumber << 0) >= 0.5 ? (inputNumber << 0) + 1 : inputNumber << 0;
-  } else if (inputNumber < 0) {
-    return (inputNumber << 0) - inputNumber >= 0.5 ? (inputNumber << 0) - 1 : inputNumber << 0;
-  } else {
-    return 0;
   }
+  if (inputNumber < 0) {
+    return inputNumber - (inputNumber << 0) <= -0.5 ? (inputNumber << 0) - 1 : inputNumber << 0;
+  }
+  return 0;
+}
+
+//condensed version of above rounding function
+function smartRound(inputNumber) {
+  return inputNumber > 0 ? (inputNumber - (inputNumber << 0) >= 0.5 ? (inputNumber << 0) + 1 : inputNumber << 0) : (inputNumber < 0 ? (inputNumber - (inputNumber << 0) <= -0.5 ? (inputNumber << 0) - 1 : inputNumber << 0) : 0);
 }
 
 //fast random bool
@@ -196,14 +201,4 @@ function cutThisAndAfter(originalString, targetString) {
 function cutUntil(originalString, targetString) {
   let startIndex = originalString.indexOf(targetString);
   return originalString.slice(startIndex);
-}
-
-
-let anyVar = 1;
-let trip = 1;
-
-if(trip) {
-  if("cat" === "cat") {
-    trip = false;
-  }
 }

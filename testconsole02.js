@@ -180,7 +180,7 @@ const buttonableSteps = [1, 3, 89];
 //always define supplemental button action in program-specific js file so it can be customized
 function supButton(buttonID) {
   supButtonIndex = parseInt(buttonID, 10) - 1;
-  cin = "<<" + buttonArray[supButtonIndex].toString() + ">>";
+  cin = "<<" + buttonArray[supButtonIndex].toString() + " Button>>";
   thisProgram();
 }
 

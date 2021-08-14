@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Web Console (Test 02)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="./cstyle.css">
 </head>
+
 <body>
-  <p id="titles" name="titles">
-  <b>Web Console</b> by Restaurant<br><br>Test Project 02 - Text Adventure-ish
+  <p id="titles">
+    <b>Web Console</b> by Restaurant<br><br>Test Project 02 - Text Adventure-ish
   </p>
-  <p id="mainArea" name="mainArea">
-  <label for="consoleOut">Console output:</label>
-  <textarea id="consoleOut" name="consoleOut" class="textOut" rows="12" readonly></textarea>
-  <label for="consoleIn">Console input:</label>
-  <div id="inputAndSubmitSection" name="inputAndSubmitSection" class="inputAndSubmit">
-  <form id="consoleForm">
-  <input id="consoleIn" name="consoleIn" class="textIn" type="text" rows="1" autofocus>
-  </form>
-  <button id="mainButton" name="mainButton" class="mainButtonClass" onclick="toConsole();">send input</button>
+  <p id="mainArea">
+    <label for="consoleOut">Console output:</label>
+    <textarea id="consoleOut" name="consoleOut" class="textOut" rows="12" readonly></textarea>
+    <label for="consoleIn">Console input:</label>
+  <div id="inputAndSubmitSection" class="inputAndSubmit">
+    <form id="consoleForm">
+      <input id="consoleIn" name="consoleIn" class="textIn" type="text" rows="1" autofocus>
+    </form>
+    <button id="mainButton" name="mainButton" class="mainButtonClass" onclick="toConsole();">send input</button>
   </div>
   </p>
-  <div id="buttons" name="buttons" class="supButtonArea">
-  <button id="buttonA" class ="supButtons" onclick="supButton(1);">[   A   ]</button> <button id="buttonB" class ="supButtons" onclick="supButton(2);">[   B   ]</button> <button id="buttonC" class ="supButtons" onclick="supButton(3);">[   C   ]</button> <button id="buttonD" class ="supButtons" onclick="supButton(4);">[   D   ]</button>
+  <div id="buttons" class="supButtonArea">
+    <button id="buttonA" class="supButtons" onclick="supButton(1);">[ A ]</button> <button id="buttonB"
+      class="supButtons" onclick="supButton(2);">[ B ]</button> <button id="buttonC" class="supButtons"
+      onclick="supButton(3);">[ C ]</button> <button id="buttonD" class="supButtons" onclick="supButton(4);">[ D
+      ]</button>
   </div>
-  <div id="clearLink" name="clearLink" class="clearLinkArea">
-  <a href="javascript:clearConsole();">clear old outputs</a>
+  <div id="clearLink" class="clearLinkArea">
+    <a href="javascript:clearConsole();">clear old outputs</a>
   </div>
   <script src="./webconsole.js"></script>
   <script src="./testconsole02.js"></script>
 </body>
+
 </html>

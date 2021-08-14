@@ -39,12 +39,13 @@ label {
 }
 
 .supButtonArea {
-  display: flex;
-  justify-content: space-between;
   position: relative;
   top: -0.5em;
   width: 60%;
   max-width: 700px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .clearLinkArea {
