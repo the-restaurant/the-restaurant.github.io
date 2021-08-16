@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Meep City Survey</title>
+  <link rel="stylesheet" href="./project2.css">
+</head>
+
+<body>
+  <div id="mainBody">
+    <div id="titleArea">
+      <h1 id="title">Meep City Survey</h1>
+      <h3 id="subtitle">City Improvement Project</h3>
+      <p id="description">A survey we'll use to fix our problems.</p>
+    </div>
+    <div id="surveyArea">
+      <form id="survey-form">
+        <label for="name" id="name-label">Enter name:</label>
+        <input id="name" type="text" class="wide-fields" placeholder="Enter your name" required>
+        <label for="email" id="email-label">Enter email address:</label>
+        <input id="email" type="email" class="wide-fields" placeholder="Enter your email" required>
+        <label for="number" id="number-label">Age (optional):</label>
+        <input id="number" type="number" class="wide-fields" placeholder="Enter your age" min="18" max="99">
+        <label for="dropdown" id="dropdown-label">What's your role in our society?</label>
+        <select id="dropdown" class="wide-fields" required>
+          <option disabled selected>Select which role best fits you</option>
+          <option value="employed-citizen">Employed</option>
+          <option value="bad-person">Bad Person</option>
+        </select>
+        <fieldset>
+          <legend>Which best fits Meep City?</legend>
+          <input type="radio" name="best-desc" id="great" value="great" required>
+          <label for="great">An amazing, flawless city</label><br>
+          <input type="radio" name="best-desc" id="good" value="good">
+          <label for="good">The happiest place on Earth</label><br>
+          <input type="radio" name="best-desc" id="better" value="better">
+          <label for="better">Heaven</label>
+        </fieldset>
+        <fieldset>
+          <legend>What anime should I watch?</legend>
+          <input type="checkbox" name="anime" id="evangelion" value="evangelion">
+          <label for="evangelion">Neon Genesis Evangelion</label><br>
+          <input type="checkbox" name="anime" id="myhero" value="myhero">
+          <label for="myhero">My Hero Academia</label><br>
+          <input type="checkbox" name="anime" id="onepiece" value="onepiece">
+          <label for="gravity">One Piece</label>
+        </fieldset>
+        <label for="comments">Any additional comments:</label>
+        <textarea id="comments" rows="8" placeholder="Anything else you love about Meep City."></textarea>
+        <label for="submit">Submit the survey:</label>
+        <button type="submit" id="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

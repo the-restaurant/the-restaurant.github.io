@@ -1,0 +1,65 @@
+.mainClass {
+  background: #ddd;
+  width: 92vw;
+  min-height: 98vh;
+  max-height: auto;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  font-family: sans-serif;
+}
+
+.titleClass {
+  margin-bottom: 0;
+}
+
+h1,h3 {
+  text-align: center;
+}
+
+#subtitle {
+  text-align: center;
+}
+
+#img-div {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#image {
+  width: 80vw;
+  max-width: 800px;
+  height: auto;
+}
+
+#img-caption {
+  text-align: center;
+  font-style: italic;
+}
+
+#tribute-info {
+  text-align: center;
+}
+
+#myList {
+  margin-left: -2em;
+  line-height: 2em;
+}
+
+#myFooter {
+  text-align: center;
+  margin-top: 2em;
+  max-width: 30em;
+  align-self: center;
+}
+
+#pretext {
+  text-align: center;
+  margin-bottom: 0;
+}

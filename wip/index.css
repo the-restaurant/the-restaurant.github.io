@@ -1,0 +1,61 @@
+:root {
+  --navbar-height: 5em;
+}
+
+body,button,table,input,textarea,form,label {
+  font-family: 'Roboto', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: block;
+  margin: 0;
+  padding: 0;
+  background-color: #dddddd;
+}
+
+.home-page-area {
+  display: block;
+  position: relative;
+  height: 200em;
+  width: inherit;
+  max-width: 132vh;
+  background-color: white;
+  margin: 0 auto 0 auto;
+}
+
+.nav-bar {
+  background-color: #ddaa00;
+  display: block;
+  position: fixed;
+  height: var(--navbar-height);
+  width: 100vw;
+  max-width: 132vh;
+  z-index: 999;
+}
+
+.this-page-area {
+  display: block;
+  position: relative;
+  padding: 12px;
+  width: inherit;
+  top: var(--navbar-height);
+}
+
+
+
+
+
+
+
+@media (min-width: 132vh) {
+  .nav-bar {
+    height: 6em;
+  }
+  .this-page-area {
+    top: 6em;
+  }
+}
