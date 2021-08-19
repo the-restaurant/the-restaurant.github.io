@@ -148,8 +148,8 @@ function program3() {
     //dodge
     player1.playerDodgeRoll = Math.random() * player1.playerDodgeStr << 0;
     if (player1.playerDodgeRoll > 0) {
-      player1.hp++;
-      newText = "You successfully dodged the cube's next attack and gained 1 HP!";
+      player1.hp += 5;
+      newText = "You successfully dodged the cube's next attack and gained 5 HP!";
     } else {
       player1.hp -= ranger(firstEnemy.enemyAttackStr / 2, 2);
       newText = "The cube attacked you despite your attempt to dodge! You have " + player1.hp + " HP left.";

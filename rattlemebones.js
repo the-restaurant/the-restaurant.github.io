@@ -202,3 +202,17 @@ function cutUntil(originalString, targetString) {
   let startIndex = originalString.indexOf(targetString);
   return originalString.slice(startIndex);
 }
+
+
+
+//creating global variables from inside a function
+
+//this line must be in the root js file / environment
+const globalObject = this;
+
+function createGlobalVar(varName, varValue) {
+  let varNameStr = varName.toString();
+  globalObject[varNameStr] = varValue;
+}
+
+createGlobalVar("foo", 41);
