@@ -1,0 +1,18 @@
+[
+  {
+    "username": "meep_fooby",
+    "hashedPW": "Sg8weijgDVt4iFLSzkg2==",
+    "email": "meepfooby420@mailsoccer.com",
+    "firstName": "Meep",
+    "lastName": "Fooby",
+    "favColor": "orange"
+  },
+  {
+    "username": "sandy_cheeks",
+    "hashedPW": "GH9s8d9gSMHd309mXw==",
+    "email": "science.squirrel@hotmail.net",
+    "firstName": "Sandy",
+    "lastName": "Cheeks",
+    "favColor": "pink"
+  }
+]
